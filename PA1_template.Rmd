@@ -16,9 +16,10 @@ activity <- read.csv('activity.csv')
 activity <- tbl_df(activity)
 activty1 <- filter(activity, steps >= 0)
 activity2 <- summarise(group_by(activty1, date), totalsteps = sum(steps)
-hist(activity2$totalsteps, main = "Average Total Steps Taken per Day", xlab = "Total Steps")
 ```
 ## What is mean total number of steps taken per day?
+```{r, echo=TRUE}
+hist(activity2$totalsteps, main = "Average Total Steps Taken per Day", xlab = "Total Steps")
 mean1 <- mean(activity2$totalsteps)
 median1 <- median(activity2$totalsteps)
 mean1
